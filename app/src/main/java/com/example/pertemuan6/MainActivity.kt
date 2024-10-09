@@ -69,19 +69,15 @@ class MainActivity : AppCompatActivity() {
                     ) {
                         val selectedKehadiran = parent?.getItemAtPosition(position).toString()
                         if (selectedKehadiran == "Hadir Tepat Waktu") {
-                            keteranganEdittext.isGone
+                            keteranganEdittext.visibility = View.GONE
                         } else {
-                            keteranganEdittext.isVisible
+                            keteranganEdittext.visibility = View.VISIBLE
                         }
                     }
                     override fun onNothingSelected(parent: AdapterView<*>?) {
                     }
                 }
 
-            // Time Picker =======================================
-            timePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
-                selectedTime = String.format("%02d:%02d", hourOfDay, minute)
-            }
             // Time Picker =======================================
             timePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
                 selectedTime = String.format("%02d:%02d", hourOfDay, minute)
